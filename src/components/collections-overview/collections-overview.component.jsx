@@ -4,6 +4,8 @@ import { selectCollectionForPreview } from "../../redux/shop/shop.selectors";
 import { useSelector } from "react-redux";
 const CollectionOverview = () => {
   const selectCollection = useSelector(selectCollectionForPreview);
+  console.log("Collection-Overview Triggered");
+
   return (
     <div className="collections-overview">
       {selectCollection.map((x) => (

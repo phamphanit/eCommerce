@@ -3,7 +3,7 @@ import "./collection-preview.styles.scss";
 import { withRouter } from "react-router-dom";
 const CollectionPreview = (props) => {
   const { routeName, title, items, history, match } = props;
-
+  console.log("Collection-Preview Triggered");
   return (
     <div className="collection-preview">
       <h1
