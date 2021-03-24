@@ -3,8 +3,8 @@ const INITIAL_STATE = {
         collections: null,
         isLoading: false,
         errorMessage: null
-}
-const shopReducer = (state, action) => {
+};
+const shopReducer = (state = INITIAL_STATE, action) => {
         switch (action.type) {
                 case ShopActionTypes.COLLECTION_FETCH_START:
 
@@ -15,11 +15,17 @@ const shopReducer = (state, action) => {
                 case ShopActionTypes.COLLECTION_FETCH_SUCCESS:
                         return {
                                 ...state,
+                                isLoading: false,
                                 collections: action.payload
+                        };
+                case ShopActionTypes.COLLECTION_FETCH_FAILURE:
+                        return {
+                                ...state,
+                                isLoading: false,
+                                errorMessage: action.payload
                         }
-
                 default:
-                        break;
+                        return state;
         }
 }
 export default shopReducer;
